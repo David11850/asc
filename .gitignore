@@ -1,0 +1,44 @@
+# --- AMSS-NCKU 数据文件夹 (最重要，防止上传 GB 级数据) ---
+GW150914/
+GW150914_*/
+backup_tars/
+# 如果你改了 Input.py 里的输出目录名，请在这里手动添加
+# 例如你改成了 MySimulation/，就添加 MySimulation/
+
+# --- 编译生成的二进制可执行文件 ---
+ABE
+ABEGPU
+TwoPunctureABE
+
+# --- 编译产生的中间文件和临时副本 ---
+*.o
+*.mod
+*.a
+AMSS_NCKU_source_copy/
+macrodef.h
+macrodef.fh
+
+# --- Python 缓存与环境 ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+conda-bld/
+
+# --- 日志与输出文件 ---
+*.log
+*.out
+*.err
+
+# --- 操作系统与 IDE 临时文件 ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- 压缩包 ---
+*.tar.gz
+*.zip
+*.7z
