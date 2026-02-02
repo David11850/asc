@@ -1,1 +1,2 @@
-modify the makefile to fit for the official remote platform,and finish the test which spends 10h.
+#64 processed version(cpu)
+which takes 12h(i am figuring out why run the same code costs different times,10h and 12h)
