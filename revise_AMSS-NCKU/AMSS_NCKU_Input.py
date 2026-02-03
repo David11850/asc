@@ -13,10 +13,10 @@ import numpy
 
 ## Setting MPI processes and the output file directory
 Draw_picture = 0
-File_directory   = "GW150914"                    ## output file directory
+File_directory   = "GW150914_MPI+OPENMP"         ## output file directory
 Output_directory = "binary_output"               ## binary data file directory
                                                  ## The file directory name should not be too long
-MPI_processes    = 8                             ## number of mpi processes used in the simulation
+MPI_processes    = 64                             ## number of mpi processes used in the simulation
 
 GPU_Calculation  = "no"                          ## Use GPU or not 
                                                  ## (prefer "no" in the current version, because the GPU part may have bugs when integrated in this Python interface)
@@ -49,9 +49,9 @@ Final_Evolution_Time     = 1000.0                 ## final evolution time t1
 Check_Time               = 100.0
 Dump_Time                = 100.0                  ## time inteval dT for dumping binary data
 D2_Dump_Time             = 100.0                  ## dump the ascii data for 2d surface after dT'
-Analysis_Time            = 2000.0                 ## dump the puncture position and GW psi4 after dT"
+Analysis_Time            = 1.0                 ## dump the puncture position and GW psi4 after dT"
 Evolution_Step_Number    = 10000000               ## stop the calculation after the maximal step number
-Courant_Factor           = 0.55                    ## Courant Factor
+Courant_Factor           = 0.5                    ## Courant Factor
 Dissipation              = 0.15                   ## Kreiss-Oliger Dissipation Strength
 
 #################################################

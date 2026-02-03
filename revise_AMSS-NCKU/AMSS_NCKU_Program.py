@@ -44,6 +44,27 @@ import os
 import shutil
 import sys
 import time
+import subprocess
+
+# ======================================================
+# ASC1606 Zen4 优化补丁：环境硬加固
+# ======================================================
+# 1. 彻底解除栈空间限制 (防止 ShellPatch 初始化时的 fgets 段错误)
+try:
+    import resource
+    resource.setrlimit(resource.RLIMIT_STACK, (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
+    print("✅ System Stack Limit set to Unlimited.")
+except Exception as e:
+    print(f"⚠️ Warning: Could not set stack limit via python: {e}")
+
+# 2. 锁定环境变量 (强制纯 MPI 模式，屏蔽所有库的自动多线程)
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
+print("✅ Environment Variables locked to Single-Thread (Pure MPI mode).")
+# ======================================================
 
 ## Set the output directory according to the input file
 File_directory = os.path.join(input_data.File_directory)   
@@ -358,17 +379,13 @@ print(                                                                         )
 
 ##################################################################
 
-## Launch the AMSS-NCKU program
-
-print()
-## print(" Ready to launch AMSS-NCKU; press Enter to continue. ")
-## inputvalue = input()           
-print()
-
 ## Change to the run directory
 os.chdir( output_directory )
 
-makefile_and_run.run_ABE()
+# makefile_and_run.run_ABE()
+run_command = f"mpirun -np {input_data.MPI_processes} --map-by core --bind-to core --oversubscribe ./ABE AMSS-NCKU.input"
+print(f"执行指令: {run_command}")
+os.system(run_command)
 
 ## Change current working directory back up two levels
 os.chdir('..')
