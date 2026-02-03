@@ -12,8 +12,8 @@ import numpy
 #################################################
 
 ## Setting MPI processes and the output file directory
-
-File_directory   = "/dev/shm/ASC1606_GW150914_FAST"  ## output file directory
+Draw_picture = 0
+File_directory   = "GW150914"                    ## output file directory
 Output_directory = "binary_output"               ## binary data file directory
                                                  ## The file directory name should not be too long
 MPI_processes    = 8                             ## number of mpi processes used in the simulation

@@ -15,8 +15,6 @@ TwoPunctureABE
 *.mod
 *.a
 AMSS_NCKU_source_copy/
-macrodef.h
-macrodef.fh
 
 # --- Python 缓存与环境 ---
 __pycache__/
