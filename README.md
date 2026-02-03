@@ -1,1 +1,2 @@
-modify the makefile to fit for the official remote platform,and finish the test which spends 10h.
+8*8 edition making
+8MPI*8openmp
