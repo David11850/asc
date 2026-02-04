@@ -2,8 +2,7 @@
 GW150914/
 GW150914_*/
 backup_tars/
-# 如果你改了 Input.py 里的输出目录名，请在这里手动添加
-# 例如你改成了 MySimulation/，就添加 MySimulation/
+AMSS_NCKU_output/
 
 # --- 编译生成的二进制可执行文件 ---
 ABE

@@ -1,2 +1,1 @@
-8*8 edition making
-8MPI*8openmp
+64MPI,异步写入磁盘
