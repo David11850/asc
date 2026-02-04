@@ -3,6 +3,7 @@ GW150914/
 GW150914_*/
 backup_tars/
 AMSS_NCKU_output/
+AMSS_NCKU_source_copy
 
 # --- 编译生成的二进制可执行文件 ---
 ABE
