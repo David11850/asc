@@ -1,1 +1,1 @@
-modify the makefile to fit for the official remote platform,and finish the test which spends 10h.
+64MPI,异步写入磁盘
